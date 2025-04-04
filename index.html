@@ -4,71 +4,127 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bitcoin Informatie</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #1a1a1a;
-            color: #ffffff;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            color: #ffffff;
+            line-height: 1.6;
+            min-height: 100vh;
         }
         header {
-            background-color: #f2a900;
-            padding: 20px;
+            background: linear-gradient(90deg, #f2a900, #ff6200);
+            padding: 40px 20px;
             text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
         header h1 {
-            margin: 0;
-            font-size: 2.5em;
+            font-size: 3em;
+            font-weight: 700;
             color: #1a1a1a;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
         nav {
-            background-color: #333;
-            padding: 10px;
+            background: rgba(51, 51, 51, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 15px;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
         nav a {
             color: #f2a900;
             text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
+            margin: 0 20px;
+            font-weight: 500;
+            transition: color 0.3s ease;
         }
         nav a:hover {
             color: #ffffff;
+            text-shadow: 0 0 10px rgba(242, 169, 0, 0.7);
         }
         .container {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #2a2a2a;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(242, 169, 0, 0.3);
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 30px;
+            background: rgba(42, 42, 42, 0.85);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1s ease-in-out;
         }
         h2 {
             color: #f2a900;
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        h2::after {
+            content: '';
+            width: 50px;
+            height: 3px;
+            background: #f2a900;
+            position: absolute;
+            bottom: -10px;
+            left: 0;
         }
         p {
-            line-height: 1.6;
+            font-weight: 300;
+            margin-bottom: 20px;
         }
         ul {
-            list-style-type: none;
-            padding: 0;
+            list-style: none;
+            margin-bottom: 20px;
         }
         ul li {
-            margin: 10px 0;
+            margin: 15px 0;
+            font-weight: 300;
+            position: relative;
+            padding-left: 25px;
+            transition: transform 0.3s ease;
         }
-        ul li:before {
-            content: "₿ ";
+        ul li:hover {
+            transform: translateX(10px);
+        }
+        ul li::before {
+            content: "₿";
             color: #f2a900;
+            position: absolute;
+            left: 0;
+            font-size: 1.2em;
+        }
+        ol {
+            padding-left: 20px;
+            font-weight: 300;
+        }
+        ol li {
+            margin: 10px 0;
         }
         footer {
             text-align: center;
             padding: 20px;
-            background-color: #333;
+            background: #333;
             color: #f2a900;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            font-size: 0.9em;
+            font-weight: 300;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 768px) {
+            header h1 { font-size: 2em; }
+            nav a { display: block; margin: 10px 0; }
+            .container { margin: 20px; padding: 20px; }
+            h2 { font-size: 1.5em; }
         }
     </style>
 </head>
@@ -85,14 +141,14 @@
     <div class="container">
         <section id="wat-is-bitcoin">
             <h2>Wat is Bitcoin?</h2>
-            <p>Bitcoin is de allereerste en meest bekende cryptocurrency ter wereld. Het werd in 2009 geïntroduceerd door een mysterieuze persoon of groep onder het pseudoniem Satoshi Nakamoto. Bitcoin is een digitale vorm van geld die volledig decentraal werkt, wat betekent dat er geen banken of overheden nodig zijn om transacties te beheren.</p>
+            <p>Bitcoin is de allereerste en meest bekende cryptocurrency ter wereld. Het werd in 2009 geïntroduceerd door een mysterieuze persoon of groep onder het pseudoniem Satoshi Nakamoto. Bitcoin is een digitale vorm van geld die volledig decentraal werkt, zonder banken of overheden.</p>
         </section>
         <section id="hoe-werkt-het">
             <h2>Hoe Werkt Bitcoin?</h2>
-            <p>Bitcoin-transacties worden opgeslagen in een openbaar, digitaal grootboek: de blockchain. Dit grootboek wordt continu bijgewerkt en gecontroleerd door een wereldwijd netwerk van computers, ook wel "miners" genoemd. Deze miners valideren transacties en verdienen nieuwe bitcoins als beloning.</p>
+            <p>Bitcoin-transacties worden opgeslagen in een openbaar, digitaal grootboek: de blockchain. Dit grootboek wordt bijgewerkt en gecontroleerd door een wereldwijd netwerk van "miners" die transacties valideren en nieuwe bitcoins verdienen.</p>
             <ul>
                 <li>Decentralisatie: Geen centrale autoriteit heeft controle.</li>
-                <li>Beperkte voorraad: Er zullen ooit maar 21 miljoen bitcoins bestaan.</li>
+                <li>Beperkte voorraad: Maximaal 21 miljoen bitcoins.</li>
                 <li>Anonimiteit: Transacties zonder identiteit (maar traceerbaar).</li>
             </ul>
         </section>
@@ -100,8 +156,8 @@
             <h2>Waarom is Bitcoin Populair?</h2>
             <p>Bitcoin heeft aan populariteit gewonnen om verschillende redenen:</p>
             <ul>
-                <li>Waardestijging: De prijs is explosief gestegen.</li>
-                <li>Financiële vrijheid: Een alternatief voor banken.</li>
+                <li>Waardestijging: Explosieve prijsstijgingen.</li>
+                <li>Financiële vrijheid: Alternatief voor banken.</li>
                 <li>Inflatiebestendig: Bescherming tegen geldontwaarding.</li>
             </ul>
         </section>
@@ -117,7 +173,7 @@
         </section>
     </div>
     <footer>
-        <p>© 2025 Bitcoin Informatie - Ontdek de Toekomst van Geld</p>
+        <p>© 2025 Bitcoin Informatie - De Toekomst van Geld</p>
     </footer>
 </body>
 </html>
