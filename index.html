@@ -1,179 +1,144 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bitcoin Informatie</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Bitcoin: The Future of Money</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
         body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-            color: #ffffff;
-            line-height: 1.6;
-            min-height: 100vh;
-        }
-        header {
-            background: linear-gradient(90deg, #f2a900, #ff6200);
-            padding: 40px 20px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
-        header h1 {
-            font-size: 3em;
-            font-weight: 700;
-            color: #1a1a1a;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        nav {
-            background: rgba(51, 51, 51, 0.9);
-            backdrop-filter: blur(10px);
-            padding: 15px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
-        nav a {
-            color: #f2a900;
-            text-decoration: none;
-            margin: 0 20px;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        nav a:hover {
-            color: #ffffff;
-            text-shadow: 0 0 10px rgba(242, 169, 0, 0.7);
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* Light gray background */
         }
         .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 30px;
-            background: rgba(42, 42, 42, 0.85);
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            animation: fadeIn 1s ease-in-out;
+            max-width: 960px;
         }
-        h2 {
-            color: #f2a900;
-            font-size: 2em;
-            font-weight: 700;
-            margin-bottom: 20px;
+        .section-title {
             position: relative;
+            display: inline-block;
+            padding-bottom: 0.5rem;
         }
-        h2::after {
+        .section-title::after {
             content: '';
-            width: 50px;
-            height: 3px;
-            background: #f2a900;
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-        }
-        p {
-            font-weight: 300;
-            margin-bottom: 20px;
-        }
-        ul {
-            list-style: none;
-            margin-bottom: 20px;
-        }
-        ul li {
-            margin: 15px 0;
-            font-weight: 300;
-            position: relative;
-            padding-left: 25px;
-            transition: transform 0.3s ease;
-        }
-        ul li:hover {
-            transform: translateX(10px);
-        }
-        ul li::before {
-            content: "₿";
-            color: #f2a900;
             position: absolute;
             left: 0;
-            font-size: 1.2em;
-        }
-        ol {
-            padding-left: 20px;
-            font-weight: 300;
-        }
-        ol li {
-            margin: 10px 0;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #333;
-            color: #f2a900;
-            font-size: 0.9em;
-            font-weight: 300;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @media (max-width: 768px) {
-            header h1 { font-size: 2em; }
-            nav a { display: block; margin: 10px 0; }
-            .container { margin: 20px; padding: 20px; }
-            h2 { font-size: 1.5em; }
+            bottom: 0;
+            width: 50%;
+            height: 4px;
+            background-color: #f7931a; /* Bitcoin orange */
+            border-radius: 9999px; /* Fully rounded corners */
         }
     </style>
 </head>
-<body>
-    <header>
-        <h1>Alles Over Bitcoin</h1>
+<body class="text-gray-800">
+
+    <!-- Header Section -->
+    <header class="bg-gradient-to-r from-yellow-400 to-orange-500 shadow-lg py-6 px-4 rounded-b-xl">
+        <div class="container mx-auto flex flex-col sm:flex-row justify-between items-center">
+            <h1 class="text-4xl font-extrabold text-white mb-4 sm:mb-0">
+                <span class="inline-block transform -rotate-6 text-5xl pr-2">₿</span> Bitcoin
+            </h1>
+            <nav>
+                <ul class="flex space-x-6 text-white text-lg font-semibold">
+                    <li><a href="#what-is-bitcoin" class="hover:text-gray-200 transition duration-300">What is Bitcoin?</a></li>
+                    <li><a href="#how-it-works" class="hover:text-gray-200 transition duration-300">How It Works</a></li>
+                    <li><a href="#get-started" class="hover:text-gray-200 transition duration-300">Get Started</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <nav>
-        <a href="#wat-is-bitcoin">Wat is Bitcoin?</a>
-        <a href="#hoe-werkt-het">Hoe Werkt Het?</a>
-        <a href="#waarom-populair">Waarom Populair?</a>
-        <a href="#hoe-kopen">Hoe Kopen?</a>
-    </nav>
-    <div class="container">
-        <section id="wat-is-bitcoin">
-            <h2>Wat is Bitcoin?</h2>
-            <p>Bitcoin is de allereerste en meest bekende cryptocurrency ter wereld. Het werd in 2009 geïntroduceerd door een mysterieuze persoon of groep onder het pseudoniem Satoshi Nakamoto. Bitcoin is een digitale vorm van geld die volledig decentraal werkt, zonder banken of overheden.</p>
+
+    <!-- Main Content -->
+    <main class="container mx-auto py-10 px-4">
+
+        <!-- Intro Section -->
+        <section class="bg-white p-8 rounded-xl shadow-md mb-10 text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Welcome to the World of Bitcoin</h2>
+            <p class="text-lg text-gray-700 leading-relaxed">
+                Bitcoin is the world's first decentralized digital currency. It's an innovative payment network and a new kind of money. It's open source; its design is public, no one owns or controls Bitcoin, and everyone can participate.
+            </p>
+            <div class="mt-6">
+                <a href="#get-started" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 shadow-md">
+                    Start Your Bitcoin Journey
+                </a>
+            </div>
         </section>
-        <section id="hoe-werkt-het">
-            <h2>Hoe Werkt Bitcoin?</h2>
-            <p>Bitcoin-transacties worden opgeslagen in een openbaar, digitaal grootboek: de blockchain. Dit grootboek wordt bijgewerkt en gecontroleerd door een wereldwijd netwerk van "miners" die transacties valideren en nieuwe bitcoins verdienen.</p>
-            <ul>
-                <li>Decentralisatie: Geen centrale autoriteit heeft controle.</li>
-                <li>Beperkte voorraad: Maximaal 21 miljoen bitcoins.</li>
-                <li>Anonimiteit: Transacties zonder identiteit (maar traceerbaar).</li>
-            </ul>
+
+        <!-- What is Bitcoin Section -->
+        <section id="what-is-bitcoin" class="bg-white p-8 rounded-xl shadow-md mb-10">
+            <h3 class="text-3xl font-bold text-gray-900 mb-6 section-title">What is Bitcoin?</h3>
+            <p class="mb-4 leading-relaxed text-gray-700">
+                Bitcoin is a cryptocurrency, a digital asset designed to work as a medium of exchange that uses cryptography to secure transactions and control the creation of new units. It is the first decentralized cryptocurrency, released in 2009 by an anonymous entity known as Satoshi Nakamoto.
+            </p>
+            <p class="mb-4 leading-relaxed text-gray-700">
+                Unlike traditional currencies issued by central banks, Bitcoin is not controlled by a single authority. It operates on a peer-to-peer network, the blockchain, which records all transactions publicly and immutably.
+            </p>
         </section>
-        <section id="waarom-populair">
-            <h2>Waarom is Bitcoin Populair?</h2>
-            <p>Bitcoin heeft aan populariteit gewonnen om verschillende redenen:</p>
-            <ul>
-                <li>Waardestijging: Explosieve prijsstijgingen.</li>
-                <li>Financiële vrijheid: Alternatief voor banken.</li>
-                <li>Inflatiebestendig: Bescherming tegen geldontwaarding.</li>
-            </ul>
+
+        <!-- How it Works Section -->
+        <section id="how-it-works" class="bg-white p-8 rounded-xl shadow-md mb-10">
+            <h3 class="text-3xl font-bold text-gray-900 mb-6 section-title">How Does Bitcoin Work?</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">The Blockchain</h4>
+                    <p class="leading-relaxed text-gray-700">
+                        The backbone of Bitcoin is the blockchain, a distributed ledger of all Bitcoin transactions ever executed. This ledger is continuously updated and accessible to everyone on the network, ensuring transparency and security.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Mining</h4>
+                    <p class="leading-relaxed text-gray-700">
+                        Bitcoin transactions are verified through a process called "mining." Miners use powerful computers to solve complex cryptographic puzzles. When a puzzle is solved, a new block of transactions is added to the blockchain, and the miner receives new Bitcoins as a reward.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Wallets</h4>
+                    <p class="leading-relaxed text-gray-700">
+                        To send and receive Bitcoin, you need a digital wallet. These wallets store your private keys, which are necessary to access your Bitcoins and authorize transactions. There are various types of wallets, including software wallets and hardware wallets.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Transactions</h4>
+                    <p class="leading-relaxed text-gray-700">
+                        A Bitcoin transaction is a digitally signed message broadcast across the network. It contains the input (where the Bitcoins come from), the output (where they are going), and an amount. Once verified by miners, the transaction is immutably recorded on the blockchain.
+                    </p>
+                </div>
+            </div>
         </section>
-        <section id="hoe-kopen">
-            <h2>Hoe Koop Je Bitcoin?</h2>
-            <p>Volg deze stappen om Bitcoin te kopen:</p>
-            <ol>
-                <li>Kies een platform (zoals Bitvavo of Coinbase).</li>
-                <li>Maak een account aan en verifieer je identiteit.</li>
-                <li>Stort geld via iDEAL of bankoverschrijving.</li>
-                <li>Koop Bitcoin en sla het op in een wallet.</li>
+
+        <!-- Get Started Section -->
+        <section id="get-started" class="bg-white p-8 rounded-xl shadow-md mb-10">
+            <h3 class="text-3xl font-bold text-gray-900 mb-6 section-title">Getting Started with Bitcoin</h3>
+            <ol class="list-decimal list-inside space-y-4 text-gray-700">
+                <li>
+                    <strong class="text-gray-900">Choose a Bitcoin Wallet:</strong> This is where you will store your Bitcoins. Popular options include software wallets (like Exodus, Electrum) or hardware wallets for extra security (like Ledger, Trezor).
+                </li>
+                <li>
+                    <strong class="text-gray-900">Buy Bitcoin:</strong> You can purchase Bitcoin through various platforms, such as cryptocurrency exchanges (e.g., Coinbase, Kraken, Binance) or peer-to-peer marketplaces.
+                </li>
+                <li>
+                    <strong class="text-gray-900">Secure Your Wallet:</strong> Make sure to securely store your seed phrase (recovery phrase) and never share it with anyone. This is the key to your funds.
+                </li>
+                <li>
+                    <strong class="text-gray-900">Learn More:</strong> The world of Bitcoin and cryptocurrencies is complex. Continue to educate yourself about the technology, risks, and developments.
+                </li>
             </ol>
         </section>
-    </div>
-    <footer>
-        <p>© 2025 Bitcoin Informatie - De Toekomst van Geld</p>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-white py-6 px-4 rounded-t-xl mt-10">
+        <div class="container mx-auto text-center">
+            <p class="text-sm">&copy; 2025 Bitcoin Information. All rights reserved.</p>
+            <p class="text-xs mt-2 text-gray-400">
+                <strong class="text-red-400">Disclaimer:</strong> The information on this website is for general informational purposes only and does not constitute financial advice. The crypto market is volatile, and investing carries risks. Always consult with a qualified financial professional before making investment decisions.
+            </p>
+        </div>
     </footer>
+
 </body>
 </html>
